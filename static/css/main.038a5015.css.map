@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/Nav/Nav.css"],"names":[],"mappings":"AAAA,QACE,yBACA,UAAa","file":"static/css/main.038a5015.css","sourcesContent":[".navbar {\r\n  background-color: #5133a4;\r\n  color: white;\r\n}\n\n\n// WEBPACK FOOTER //\n// ./src/components/Nav/Nav.css"],"sourceRoot":""}
