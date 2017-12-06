@@ -1,6 +1,8 @@
 import React from "react";
 
-export const Container = ({ fluid, children }) =>
-  <div className={`container${fluid ? "-fluid" : ""}`}>
-    {children}
+const Container = props =>
+  <div className={`container${props.fluid ? "-fluid" : ""}`}>
+    {props.children}
   </div>;
+
+export default Container;

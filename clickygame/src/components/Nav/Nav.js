@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "./Nav.css";
 
-const Nav = () =>
+const Nav = props =>
   <nav  className="navbar navbar-expand-sm">
     <ul className="navbar-nav">
       <li className="nav-item">
@@ -10,7 +10,7 @@ const Nav = () =>
     </ul>
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
-        <h3 className="nav-link">Score: 0 | Top Score: 0</h3>
+        <h3 className="nav-link">Score: {props.score} | Top Score: {props.topScore}</h3>
       </li>
     </ul>
   </nav>; 
