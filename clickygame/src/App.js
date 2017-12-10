@@ -19,13 +19,15 @@ const imageSrc = ["http://www.omega-level.net/wp-content/uploads/2017/10/wonder-
 "https://pmcdeadline2.files.wordpress.com/2017/10/venom-0.jpg?w=446&h=299&crop=1",
 "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/d/df/Thor-2.jpg/revision/latest/scale-to-width-down/250?cb=20151026230045"
 ]
+let clickedImages = [];
 
 class App extends Component {
 
 //setting initial state for stateful component
   state = {
     score: 0,
-    topScore: 0
+    topScore: 0,
+    message: "popddj"
   }
 
   shuffle = array => {
@@ -41,11 +43,30 @@ class App extends Component {
     }
   };
 
-  handleImgClick = () => {
-    this.setState({
-      score: this.state.score + 1
-    })
+  handleImgClick = (event) => {
+    
+    const source = event.target.src;
+    const indexCheck = clickedImages.indexOf(source);
 
+    if (indexCheck === -1) {
+      clickedImages.push(source);
+      this.setState({
+        score: this.state.score + 1 
+      });
+    }
+
+    else {
+      alert("You Lose!");
+      clickedImages = [];
+      if (this.state.score > this.state.topScore) {
+        this.setState({
+          topScore: this.state.score 
+        }); 
+      }
+      this.setState({
+        score: 0 
+      });
+    }
     this.shuffle(imageSrc);
   };
 
@@ -62,7 +83,7 @@ class App extends Component {
         <br/>
         <br/>
         <Row>
-          <Col size="lg-6">
+          <Col size="lg-9 md-12 sm-12">
             <ImageContainer src={imageSrc[0]} onClick={this.handleImgClick}/>
             <ImageContainer src={imageSrc[1]} onClick={this.handleImgClick}/>
             <ImageContainer src={imageSrc[2]} onClick={this.handleImgClick}/>
