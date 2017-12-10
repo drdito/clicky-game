@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./Nav.css";
 
 const Nav = props =>
-  <nav  className="navbar navbar-expand-sm">
+  <nav  className="navbar navbar-expand-sm fixed-top">
     <ul className="navbar-nav">
       <li className="nav-item">
         <h3 className="nav-link" >Clicky Game</h3>
